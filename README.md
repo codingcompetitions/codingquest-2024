@@ -2,25 +2,25 @@
 
 [Coding Quest 2024](https://codingquest.io/) is solved using [Ruby](https://www.ruby-lang.org/en/documentation/).
 
-| Solved? |                                  Name                                  |
-|---------|------------------------------------------------------------------------|
-|         | [Day 01](https://codingquest.io/problem/28) - [Purchase tickets]()     |
-|         | [Day 02](https://codingquest.io/problem/29) - [Broken firewall]()      |
-|         | [Day 03](https://codingquest.io/problem/30) - [Hotel door code]()      |
-|         | [Day 04](https://codingquest.io/problem/31) - [Closest star systems]() |
-|         | [Day 05](https://codingquest.io/problem/32) - [Busy moon rovers]()     |
-|         | [Day 06](https://codingquest.io/problem/33) - [Time to play fair]()    |
-|         | [Day 07](https://codingquest.io/problem/34) - [The purge]()            |
-|         | [Day 08](https://codingquest.io/problem/35) - [Connecting cities]()    |
-|         | [Day 09](https://codingquest.io/problem/36) - [Mining tunnels]()       |
-|         | [Day 10](https://codingquest.io/problem/37) - [NA]()                   |
+| Solved? |                                        Name                                       |
+|---------|-----------------------------------------------------------------------------------|
+|         | [Day 01](https://codingquest.io/problem/28) - [Purchase tickets](app/cq/Day01.rb) |
+|         | [Day 02](https://codingquest.io/problem/29) - [Broken firewall](app/cq/Day02.rb)                 |
+|         | [Day 03](https://codingquest.io/problem/30) - [Hotel door code](app/cq/Day03.rb)                 |
+|         | [Day 04](https://codingquest.io/problem/31) - [Closest star systems](app/cq/Day04.rb)            |
+|         | [Day 05](https://codingquest.io/problem/32) - [Busy moon rovers](app/cq/Day05.rb)                |
+|         | [Day 06](https://codingquest.io/problem/33) - [Time to play fair](app/cq/Day06.rb)               |
+|         | [Day 07](https://codingquest.io/problem/34) - [The purge](app/cq/Day07.rb)                       |
+|         | [Day 08](https://codingquest.io/problem/35) - [Connecting cities](app/cq/Day08.rb)               |
+|         | [Day 09](https://codingquest.io/problem/36) - [Mining tunnels](app/cq/Day09.rb)                  |
+|         | [Day 10](https://codingquest.io/problem/37) - [NA]()                              |
 
 ## Run
 
 ```sh
-rails day(01-10)[path/to/file,true]
+rails day(01-10):part01[path/to/file,true]
 
-#rails day01[../cq-data/2024/input/day01-01.in,true]
+#rails day01:part01[../cq-data/2024/input/day01-01.in,true]
 ```
 
 ### Run test suite
