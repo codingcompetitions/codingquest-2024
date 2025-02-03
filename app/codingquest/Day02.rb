@@ -17,14 +17,14 @@ class Day02
                 packet = line.scan(/../)
 
                 length = (packet[2] + packet[3]).hex
-                source = [packet[12].hex, packet[13].hex, packet[14].hex, packet[15].hex]
-                dest = [packet[16].hex, packet[17].hex, packet[18].hex, packet[19].hex]
+                source = [ packet[12].hex, packet[13].hex, packet[14].hex, packet[15].hex ]
+                dest = [ packet[16].hex, packet[17].hex, packet[18].hex, packet[19].hex ]
 
-                if (debug)
+                if debug
                     puts "#{line.strip} - Length #{length} bytes, source IP address #{source.join "."}, destination #{dest.join "."}"
                 end
 
-                if [source[0], dest[0]].include?(192) && [source[1], dest[1]].include?(168)
+                if [ source[0], dest[0] ].include?(192) && [ source[1], dest[1] ].include?(168)
                     system_length += length
                 else
                     passenger_length += length
