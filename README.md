@@ -9,7 +9,7 @@
 | ✅       | [Day 03](https://codingquest.io/problem/30) - [Hotel door code](app/codingquest/Day03.rb)      |
 | ✅       | [Day 04](https://codingquest.io/problem/31) - [Closest star systems](app/codingquest/Day04.rb) |
 | ✅       | [Day 05](https://codingquest.io/problem/32) - [Busy moon rovers](app/codingquest/Day05.rb)     |
-|         | [Day 06](https://codingquest.io/problem/33) - [Time to play fair](app/codingquest/Day06.rb)    |
+| ✅       | [Day 06](https://codingquest.io/problem/33) - [Time to play fair](app/codingquest/Day06.rb)    |
 |         | [Day 07](https://codingquest.io/problem/34) - [The purge](app/codingquest/Day07.rb)            |
 |         | [Day 08](https://codingquest.io/problem/35) - [Connecting cities](app/codingquest/Day08.rb)    |
 |         | [Day 09](https://codingquest.io/problem/36) - [Mining tunnels](app/codingquest/Day09.rb)       |
