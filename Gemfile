@@ -51,6 +51,10 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 end
 
+gem "sorbet", group: :development
+gem "sorbet-runtime"
+gem "tapioca", require: false, group: [ :development, :test ]
+
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
