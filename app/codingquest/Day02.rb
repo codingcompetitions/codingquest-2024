@@ -3,6 +3,8 @@
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
 
+##
+#
 class Day02
     ##
     #       45 00 03 77 00 00 00 00 83 06 f3 9f 0A 00 0b c1 d7 25 34 41

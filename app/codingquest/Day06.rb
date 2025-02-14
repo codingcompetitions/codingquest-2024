@@ -3,7 +3,14 @@
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
 
+##
+#
 class Day06
+    ##
+    #
+    # @param path [String] Path to file.
+    # @param debug [true, false] if _debug_ is enabled.
+    # @return [String] The message decoded.
     def self.part01(path, debug)
         alphabet = [
             "a", "b", "c", "d", "e", "f", "g", "h", "i", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
@@ -38,6 +45,11 @@ class Day06
         decoded_message.join("").strip
     end
 
+    private
+
+    ##
+    #
+    #
     def self.decode(chunk, playfair, debug)
         index_first = nil
         row_first = nil
