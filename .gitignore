@@ -8,6 +8,9 @@
 .yardoc
 /docs/coding-quest-2024
 
+# Sorbet
+/sorbet/rbi/hidden-definitions/errors.txt
+
 # Ignore bundler config.
 /.bundle
 
