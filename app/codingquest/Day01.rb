@@ -1,13 +1,20 @@
+# typed: strict
+
+require "sorbet-runtime"
+
 # (c) Manuel Alejandro Gómez Nicasio <az-dev@outlook.com>
 #
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
 
-##
+#
 #
 class Day01
-    ##
+    extend T::Sig
+
     #
+    #
+    sig { params(path: String, debug: T::Boolean).returns(Integer) }
     def self.part01(path, debug)
         spaceliner = {}
         prices = []

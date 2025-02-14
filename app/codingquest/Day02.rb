@@ -1,15 +1,22 @@
+# typed: strict
+
+require "sorbet-runtime"
+
 # (c) Manuel Alejandro Gómez Nicasio <az-dev@outlook.com>
 #
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
 
-##
+#
 #
 class Day02
-    ##
+    extend T::Sig
+
+    #
     #       45 00 03 77 00 00 00 00 83 06 f3 9f 0A 00 0b c1 d7 25 34 41
     # byte   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
     # index  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19
+    sig { params(path: String, debug: T::Boolean).returns(String) }
     def self.part01(path, debug)
         system_length = 0
         passenger_length = 0
