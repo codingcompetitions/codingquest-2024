@@ -1,4 +1,5 @@
 -o docs/coding-quest-2024
 --title "Coding Quest 2024"
+--plugin yard-sorbet
 "app/codingquest/**/*.rb" -
 README.md LICENSE

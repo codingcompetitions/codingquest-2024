@@ -60,6 +60,8 @@ group :development do
   gem "web-console"
 
   gem "yard"
+
+  gem "yard-sorbet"
 end
 
 group :test do

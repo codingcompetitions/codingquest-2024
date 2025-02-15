@@ -417,6 +417,7 @@ DEPENDENCIES
   tzinfo-data
   web-console
   yard
+  yard-sorbet
 
 BUNDLED WITH
    2.6.3
