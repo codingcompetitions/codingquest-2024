@@ -41,6 +41,6 @@ class Day04
 
         distances.sort_by! { |element| element[:distance] }
 
-        distances.first[:distance]
+        distances.fetch(0)[:distance]
     end
 end

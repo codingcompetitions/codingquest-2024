@@ -24,7 +24,7 @@ class Day01
                 chunks = line.downcase.split(/[:\s]+/)
                 chunks[2] = chunks[2].to_i
 
-                chunks[2] *= -1 if %w[discount rebate].include?(chunks[1])
+                chunks[2] = chunks.fetch(2) * -1 if %w[discount rebate].include?(chunks[1])
 
                 spaceliner[chunks[0]] ||= {}
                 spaceliner[chunks[0]][chunks[1]] ||= 0
@@ -38,6 +38,6 @@ class Day01
 
         prices.sort_by! { |element| element[:price] }
 
-        prices.first[:price]
+        prices.fetch(0)[:price]
     end
 end

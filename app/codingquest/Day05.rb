@@ -21,17 +21,17 @@ class Day05
         rovers = []
 
         File.open(path, "r") do |file|
-            destinations = file.gets.split.map(&:to_sym)
+            destinations = T.must(file.gets).split.map(&:to_sym)
 
             file.each_line do |line|
                 break if line.strip == ""
 
                 chunks = line.split
 
-                distances[chunks[0].to_sym] = {}
+                distances[chunks.fetch(0).to_sym] = {}
 
                 chunks.drop(1).each_with_index do |element, index|
-                    distances[chunks[0].to_sym][destinations[index]] = element.to_i
+                    distances[chunks.fetch(0).to_sym][destinations[index]] = element.to_i
                 end
             end
 

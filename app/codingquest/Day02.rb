@@ -25,9 +25,9 @@ class Day02
             file.each_line do |line|
                 packet = line.scan(/../)
 
-                length = (packet[2] + packet[3]).hex
-                source = [ packet[12].hex, packet[13].hex, packet[14].hex, packet[15].hex ]
-                dest = [ packet[16].hex, packet[17].hex, packet[18].hex, packet[19].hex ]
+                length = (packet.fetch(2).to_s + packet.fetch(3).to_s).hex
+                source = [ packet.fetch(12).to_s.hex, packet.fetch(13).to_s.hex, packet.fetch(14).to_s.hex, packet.fetch(15).to_s.hex ]
+                dest = [ packet.fetch(16).to_s.hex, packet.fetch(17).to_s.hex, packet.fetch(18).to_s.hex, packet.fetch(19).to_s.hex ]
 
                 if debug
                     puts "#{line.strip} - Length #{length} bytes, source IP address #{source.join "."}, destination #{dest.join "."}"

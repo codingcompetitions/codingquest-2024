@@ -23,8 +23,8 @@ class Day06
             "a", "b", "c", "d", "e", "f", "g", "h", "i", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
         ]
 
-        key = nil
-        message = nil
+        key = T.let([""], T::Array[String])
+        message = T.let([""], T::Array[String])
         playfair = nil
 
         decoded_message = []
@@ -32,18 +32,18 @@ class Day06
         File.open(path, "r") do |file|
             file.gets
 
-            key = file.gets.split(/:/).last.strip.split(//).uniq
+            key = T.must(file.gets).split(/:/).reverse.fetch(0).strip.split(//).uniq
 
             file.gets
 
-            message = file.gets.split(/:/).last.strip.split(/\s/)
+            message = T.must(file.gets).split(/:/).reverse.fetch(0).strip.split(/\s/)
         end
 
         playfair = (key + (alphabet - key)).each_slice(5).to_a
 
         message.each do |word|
             word.scan(/../).each do |chunk|
-                decoded_message << decode(chunk, playfair, debug)
+                decoded_message << decode(chunk.split(""), playfair, debug)
             end
 
             decoded_message << " "
@@ -57,19 +57,20 @@ class Day06
     #
     #
     #
+    sig { params(chunk: T::Array[String], playfair: T::Array[T::Array[String]], debug: T::Boolean).returns(String) }
     def self.decode(chunk, playfair, debug)
-        index_first = nil
-        row_first = nil
+        index_first = T.let(nil, T.nilable(Integer))
+        row_first = T.let(nil, T.nilable(Integer))
 
-        index_last = nil
-        row_last = nil
+        index_last = T.let(nil, T.nilable(Integer))
+        row_last = T.let(nil, T.nilable(Integer))
 
         playfair.transpose.each do |line|
-            if line.include? chunk.first and line.include? chunk.last
-                index_first = line.index(chunk.first) - 1
+            if line.include? chunk.fetch(0) and line.include? chunk.reverse.fetch(0)
+                index_first = T.must(line.index(chunk.fetch(0))) - 1
                 index_first = line.length - 1 if index_first < 0
 
-                index_last = line.index(chunk.last) - 1
+                index_last = T.must(line.index(chunk.reverse.fetch(0))) - 1
                 index_last = line.length - 1 if index_last < 0
 
                 return "#{line[index_first]}#{line[index_last]}"
@@ -77,27 +78,27 @@ class Day06
         end
 
         playfair.each_with_index do |line, index|
-            if line.include? chunk.first and line.include? chunk.last
-                index_first = line.index(chunk.first) - 1
+            if line.include? chunk.fetch(0) and line.include? chunk.reverse.fetch(0)
+                index_first = T.must(line.index(chunk.fetch(0))) - 1
                 index_first = line.length - 1 if index_first < 0
 
-                index_last = line.index(chunk.last) - 1
+                index_last = T.must(line.index(chunk.reverse.fetch(0))) - 1
                 index_last = line.length - 1 if index_last < 0
 
                 return "#{line[index_first]}#{line[index_last]}"
             else
-                if line.include? chunk.first and index_first.nil?
+                if line.include? chunk.fetch(0) and index_first.nil?
                     row_first = index
-                    index_first = line.index chunk.first
-                elsif line.include? chunk.last and index_last.nil?
+                    index_first = line.index chunk.fetch(0)
+                elsif line.include? chunk.reverse.fetch(0) and index_last.nil?
                     row_last = index
-                    index_last = line.index chunk.last
+                    index_last = line.index chunk.reverse.fetch(0)
                 end
 
                 unless row_first.nil? or row_last.nil?
                     puts "#{line} => #{index}\n\t#{chunk} #{row_first} - #{index_first} ~ #{row_last} - #{index_last}" if debug
 
-                    return "#{playfair[row_first][index_last]}#{playfair[row_last][index_first]}"
+                    return "#{T.must(playfair[row_first])[T.must(index_last)]}#{T.must(playfair[row_last])[T.must(index_first)]}"
                 end
             end
         end
