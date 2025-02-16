@@ -23,8 +23,8 @@ class Day06
             "a", "b", "c", "d", "e", "f", "g", "h", "i", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
         ]
 
-        key = T.let([""], T::Array[String])
-        message = T.let([""], T::Array[String])
+        key = T.let([ "" ], T::Array[String])
+        message = T.let([ "" ], T::Array[String])
         playfair = nil
 
         decoded_message = []
@@ -43,7 +43,7 @@ class Day06
 
         message.each do |word|
             word.scan(/../).each do |chunk|
-                decoded_message << decode(chunk.split(""), playfair, debug)
+                decoded_message << decode(chunk.to_s, playfair, debug)
             end
 
             decoded_message << " "
@@ -57,8 +57,9 @@ class Day06
     #
     #
     #
-    sig { params(chunk: T::Array[String], playfair: T::Array[T::Array[String]], debug: T::Boolean).returns(String) }
+    sig { params(chunk: String, playfair: T::Array[T::Array[String]], debug: T::Boolean).returns(String) }
     def self.decode(chunk, playfair, debug)
+        chunk = chunk.chars
         index_first = T.let(nil, T.nilable(Integer))
         row_first = T.let(nil, T.nilable(Integer))
 
