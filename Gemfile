@@ -60,6 +60,8 @@ group :development do
   gem "web-console"
 
   gem "yard"
+  gem 'redcarpet'
+  gem 'github-markup'
 
   gem "yard-sorbet"
 end

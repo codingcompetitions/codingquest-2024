@@ -1,5 +1,7 @@
 -o docs/coding-quest-2024
+--markup-provider=redcarpet
+--markup=markdown
 --title "Coding Quest 2024"
 --plugin yard-sorbet
-"app/codingquest/**/*.rb" -
-README.md LICENSE
+--files README.md,LICENSE
+"app/codingquest/**/*.rb"
